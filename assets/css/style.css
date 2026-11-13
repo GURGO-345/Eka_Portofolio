@@ -1,0 +1,643 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b1424;
+    background-image:
+        radial-gradient(#29405b 1px, transparent 1px),
+        radial-gradient(#29405b 1px, transparent 1px);
+    background-size: 90px 90px, 130px 130px;
+    background-position: 0 0, 40px 50px;
+    background-attachment: fixed;
+    color: #e8edf5;
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: rgba(8, 17, 32, 0.97);
+    border-bottom: 1px solid #263750;
+}
+
+.logo {
+    color: #58c7ff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.navbar nav a {
+    color: #e8edf5;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.navbar nav a:hover {
+    color: #58c7ff;
+}
+
+/* SECTION */
+.section {
+    padding: 85px 8%;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title p,
+.eyebrow {
+    color: #58c7ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-top: 5px;
+}
+
+/* HOME */
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #58c7ff;
+}
+
+.hero h2 {
+    color: #a8b9d0;
+    margin-bottom: 15px;
+}
+
+.hero-text > p:not(.eyebrow) {
+    color: #bdc9d9;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #159bd7;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #087eb5;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #58c7ff;
+    border: 1px solid #58c7ff;
+}
+
+.btn-outline:hover {
+    background: #159bd7;
+    color: white;
+}
+
+.profile-frame {
+    width: 290px;
+    height: 290px;
+    min-width: 240px;
+    border: 4px solid #58c7ff;
+    border-radius: 50%;
+    padding: 7px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(88, 199, 255, 0.2);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CONTENT CARD */
+.content-card {
+    padding: 25px;
+    background: #142238;
+    border: 1px solid #293b55;
+    border-radius: 14px;
+    color: #c8d4e5;
+    transition: 0.3s;
+}
+
+.content-card:hover {
+    border-color: #58c7ff;
+    transform: translateY(-3px);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.content-card h3 {
+    color: #58c7ff;
+    margin-bottom: 8px;
+}
+
+.content-card small {
+    display: block;
+    margin-top: 8px;
+    color: #91a4bd;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.skill-label span:last-child {
+    color: #58c7ff;
+}
+
+.progress {
+    height: 9px;
+    border-radius: 20px;
+    background: #263750;
+    overflow: hidden;
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #159bd7, #58c7ff);
+}
+
+/* CONTACT */
+.contact-card {
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact-card > p {
+    margin-bottom: 20px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contactForm label {
+    color: #58c7ff;
+    margin-top: 8px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #344963;
+    border-radius: 8px;
+    outline: none;
+    background: #0b1424;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #58c7ff;
+}
+
+#contactForm textarea {
+    resize: vertical;
+}
+
+#contactForm button {
+    margin-top: 12px;
+}
+
+/* FOOTER */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #080f1c;
+    color: #91a4bd;
+    font-size: 13px;
+}
+
+/* SETTINGS BUTTON */
+.settings-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #159bd7;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.settings-button:hover {
+    transform: rotate(45deg);
+}
+
+/* SETTINGS PANEL */
+.settings-panel {
+    position: fixed;
+    right: 25px;
+    bottom: 95px;
+    z-index: 9998;
+    width: 300px;
+    max-width: calc(100% - 40px);
+    padding: 20px;
+    background: #142238;
+    color: white;
+    border: 1px solid #58c7ff;
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.settings-panel[hidden] {
+    display: none !important;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.settings-header h3 {
+    color: #58c7ff;
+}
+
+.settings-header button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.setting-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.setting-item button,
+.setting-item select {
+    padding: 10px;
+    border: 1px solid #3a526e;
+    border-radius: 7px;
+    background: #0b1424;
+    color: white;
+    cursor: pointer;
+}
+
+.volume-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+#starsToggle {
+    width: 18px;
+    height: 18px;
+    accent-color: #159bd7;
+}
+
+/* LIGHT MODE */
+body.light-theme {
+    background: #edf4fb;
+    color: #17283d;
+}
+
+body.light-theme .navbar {
+    background: #ffffff;
+    border-color: #d5e1ed;
+}
+
+body.light-theme .navbar nav a {
+    color: #17283d;
+}
+
+body.light-theme {
+    background-color: #edf4fb;
+    background-image:
+        radial-gradient(#c6d7e8 1px, transparent 1px),
+        radial-gradient(#c6d7e8 1px, transparent 1px);
+}
+
+body.light-theme .hero {
+    background: transparent;
+}
+
+body.light-theme .hero-text > p:not(.eyebrow),
+body.light-theme .hero h2 {
+    color: #40536b;
+}
+
+body.light-theme .content-card {
+    background: white;
+    color: #40536b;
+    border-color: #d5e1ed;
+}
+
+body.light-theme #contactForm input,
+body.light-theme #contactForm textarea {
+    background: #f5f8fc;
+    color: #17283d;
+    border-color: #c7d5e4;
+}
+
+body.light-theme .settings-panel {
+    background: white;
+    color: #17283d;
+}
+
+body.light-theme .settings-header button {
+    color: #17283d;
+}
+
+body.light-theme .setting-item button,
+body.light-theme .setting-item select {
+    background: #edf4fb;
+    color: #17283d;
+}
+
+body.light-theme footer {
+    background: #dce8f3;
+    color: #40536b;
+}
+
+/* HIDE STARS */
+body.no-stars .hero {
+    background-image: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar nav {
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 6%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 13px;
+    }
+
+    .profile-frame {
+        width: 230px;
+        height: 230px;
+        min-width: 230px;
+    }
+
+    .card-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+/* METEOR ANIME - KANAN KE KIRI */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: -100px;
+    left: 70%;
+    width: 150px;
+    height: 3px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(88, 199, 255, 0.5),
+        #58c7ff,
+        white
+    );
+    box-shadow:
+        0 0 8px #58c7ff,
+        0 0 18px #58c7ff,
+        0 0 30px rgba(88, 199, 255, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    animation: animeMeteor 5s linear infinite;
+}
+
+body::after {
+    left: 90%;
+    animation-delay: 1.7s;
+    animation-duration: 5.5s;
+}
+
+/* GERAKAN METEOR */
+@keyframes animeMeteor {
+    0% {
+        transform: translate(0, 0) rotate(145deg);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    45% {
+        transform: translate(-750px, 600px) rotate(145deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-750px, 600px) rotate(145deg);
+        opacity: 0;
+    }
+}
+
+/* METEOR KETIGA */
+.hero {
+    position: relative;
+}
+
+.hero .meteor-placeholder {
+    display: none;
+}
+
+body::marker {
+    content: "";
+}
+
+/* MATIKAN EFEK METEOR */
+body.no-stars::before,
+body.no-stars::after {
+    display: none;
+}
+
+/* PENGATURAN BINTANG */
+body.no-stars::before,
+body.no-stars::after {
+    display: none;
+}
+
+/* MASKOT ASTRONAUT */
+.space-mascot {
+    position: fixed;
+    left: 20px;
+    bottom: 15px;
+    width: 115px;
+    z-index: 500;
+    pointer-events: none;
+    animation: astronautFloat 3s ease-in-out infinite;
+}
+
+.space-mascot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(88, 199, 255, 0.4));
+}
+
+/* ANIMASI MELAYANG */
+@keyframes astronautFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(3deg);
+    }
+}
+
+/* UKURAN MOBILE */
+@media (max-width: 600px) {
+    .space-mascot {
+        width: 75px;
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+/* HORMATI PENGATURAN REDUKSI GERAK */
+@media (prefers-reduced-motion: reduce) {
+    .space-mascot {
+        animation: none;
+    }
+}
