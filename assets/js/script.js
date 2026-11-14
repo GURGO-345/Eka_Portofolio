@@ -193,5 +193,52 @@ if (spaceMascot && mascotMessage) {
         }
     });
 }
+ // =================================
+// 7. ANIMASI TEKS MENGETIK
+// =================================
+
+const typingElement = document.getElementById("typing");
+
+if (typingElement) {
+
+    const typingWords = [
+        "Pelajar TJKT",
+        "Web Developer Pemula",
+        "Network Enthusiast",
+        "IoT Enthusiast"
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+
+        const currentWord = typingWords[wordIndex];
+
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        typingElement.textContent = currentWord.substring(0, charIndex);
+
+        let typingSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            typingSpeed = 1500;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % typingWords.length;
+            typingSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typingSpeed);
+    }
+
+    typeEffect();
+}
  
 });
