@@ -596,15 +596,27 @@ body.no-stars::after {
     display: none;
 }
 
-/* MASKOT ASTRONAUT */
+/* =================================
+   MASKOT ASTRONAUT INTERAKTIF
+================================= */
+
 .space-mascot {
     position: fixed;
     left: 20px;
     bottom: 15px;
     width: 115px;
-    z-index: 500;
-    pointer-events: none;
+    z-index: 9997;
+
+    /* PENTING: agar maskot bisa diklik */
+    pointer-events: auto;
+    cursor: pointer;
+
     animation: astronautFloat 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.space-mascot:hover {
+    filter: brightness(1.15);
 }
 
 .space-mascot img {
@@ -612,6 +624,7 @@ body.no-stars::after {
     width: 100%;
     height: auto;
     object-fit: contain;
+    pointer-events: auto;
     filter: drop-shadow(0 0 12px rgba(88, 199, 255, 0.4));
 }
 
@@ -626,55 +639,60 @@ body.no-stars::after {
     }
 }
 
-/* UKURAN MOBILE */
-@media (max-width: 600px) {
-    .space-mascot {
-        width: 75px;
-        left: 10px;
-        bottom: 10px;
-    }
-}
-
-/* HORMATI PENGATURAN REDUKSI GERAK */
-@media (prefers-reduced-motion: reduce) {
-    .space-mascot {
-        animation: none;
-    }
-}
-/* MASKOT INTERAKTIF */
+/* KOTAK PESAN */
 .mascot-message {
-    position: absolute;
-    right: calc(100% + 12px);
-    bottom: 10px;
-    width: 220px;
-    padding: 13px;
+    position: fixed;
+    left: 145px;
+    bottom: 35px;
+    z-index: 9999;
+
+    width: 250px;
+    max-width: calc(100vw - 165px);
+
+    padding: 14px;
     background: #16263e;
-    color: #ffffff;
+    color: white;
     border: 1px solid #16b9ed;
     border-radius: 12px;
+
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: center;
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
 }
 
 .mascot-message[hidden] {
     display: none !important;
 }
 
-.space-mascot {
-    cursor: pointer;
-}
-
+/* EFEK FOKUS KEYBOARD */
 .space-mascot:focus-visible {
     outline: 2px solid #16b9ed;
     outline-offset: 5px;
+    border-radius: 12px;
 }
 
-@media (max-width: 480px) {
+/* TAMPILAN HP */
+@media (max-width: 600px) {
+    .space-mascot {
+        width: 75px;
+        left: 10px;
+        bottom: 10px;
+    }
+
     .mascot-message {
-        width: 190px;
+        left: 95px;
+        bottom: 20px;
+        width: 210px;
+        max-width: calc(100vw - 110px);
         font-size: 12px;
+    }
+}
+
+/* PENGATURAN REDUKSI GERAK */
+@media (prefers-reduced-motion: reduce) {
+    .space-mascot {
+        animation: none;
     }
 }
