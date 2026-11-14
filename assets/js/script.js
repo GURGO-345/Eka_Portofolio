@@ -193,3 +193,5 @@ if (spaceMascot && mascotMessage) {
         }
     });
 }
+ 
+});
