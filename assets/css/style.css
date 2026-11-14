@@ -641,3 +641,40 @@ body.no-stars::after {
         animation: none;
     }
 }
+/* MASKOT INTERAKTIF */
+.mascot-message {
+    position: absolute;
+    right: calc(100% + 12px);
+    bottom: 10px;
+    width: 220px;
+    padding: 13px;
+    background: #16263e;
+    color: #ffffff;
+    border: 1px solid #16b9ed;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.mascot-message[hidden] {
+    display: none !important;
+}
+
+.space-mascot {
+    cursor: pointer;
+}
+
+.space-mascot:focus-visible {
+    outline: 2px solid #16b9ed;
+    outline-offset: 5px;
+}
+
+@media (max-width: 480px) {
+    .mascot-message {
+        width: 190px;
+        font-size: 12px;
+    }
+}
