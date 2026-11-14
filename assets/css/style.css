@@ -696,3 +696,27 @@ body.no-stars::after {
         animation: none;
     }
 }
+/* =================================
+   ANIMASI TEKS MENGETIK
+================================= */
+
+.typing-text {
+    min-height: 1.5em;
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: #38bdf8;
+    font-weight: bold;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
