@@ -142,3 +142,54 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+// =================================
+// 6. MASKOT INTERAKTIF
+// =================================
+
+const spaceMascot = document.getElementById("spaceMascot");
+const mascotMessage = document.getElementById("mascotMessage");
+
+if (spaceMascot && mascotMessage) {
+
+    const messages = [
+        "Halo! Selamat datang di portofolio Eka! 👋",
+        "Yuk, kenali lebih jauh tentang diriku!",
+        "Jangan lupa lihat proyek-proyek yang pernah aku buat!",
+        "Terima kasih sudah mampir. Semoga harimu menyenangkan!",
+        "Tetap semangat belajar dan berkarya! 🚀"
+    ];
+
+    let messageIndex = 0;
+    let hideMessageTimer;
+
+    function showMascotMessage(message) {
+        mascotMessage.textContent = message;
+        mascotMessage.hidden = false;
+
+        clearTimeout(hideMessageTimer);
+
+        hideMessageTimer = setTimeout(function () {
+            mascotMessage.hidden = true;
+        }, 6000);
+    }
+
+    // Sapaan otomatis ketika website dibuka
+    setTimeout(function () {
+        showMascotMessage(messages[0]);
+    }, 1000);
+
+    // Pesan berganti ketika maskot diklik
+    function nextMascotMessage() {
+        messageIndex = (messageIndex + 1) % messages.length;
+        showMascotMessage(messages[messageIndex]);
+    }
+
+    spaceMascot.addEventListener("click", nextMascotMessage);
+
+    spaceMascot.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            nextMascotMessage();
+        }
+    });
+}
